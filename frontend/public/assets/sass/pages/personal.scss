@@ -1,0 +1,45 @@
+.personal {
+	padding-bottom: 96px;
+
+	@media (max-width: $mobile) {
+		padding-bottom: 48px;
+	}
+
+	&__alert {
+		margin-top: 48px;
+	}
+
+	&__title {
+		margin: 48px 0;
+
+		@media (max-width: $mobile) {
+			margin: 44px 0 32px 0;
+		}
+	}
+
+	&__button {
+		width: 100%;
+		margin-top: 24px;
+
+		@media (max-width: $mobile) {
+			margin-top: 8px;
+		}
+	}
+
+	&__select {
+		margin: 24px 0;
+	}
+
+	&__input {
+		display: block;
+		margin: 24px 0;
+	}
+
+	&__block {
+		margin: 24px 0;
+	}
+
+	&__list {
+		margin-top: 32px;
+	}
+}

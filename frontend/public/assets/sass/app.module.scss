@@ -1,0 +1,178 @@
+@use 'sass:math';
+
+// Шрифт по умолчанию
+$fontFamily: 'MuseoSansCyrl', sans-serif;
+
+// base
+@import 'base/mixins';
+@import 'base/variables';
+@import 'base/fonts';
+@import 'base/null';
+
+$pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: em(767.98); // Телефоны L
+$mobileMedium: em(600); // Телефоны M
+$mobileSmall: em(479.98); // Телефоны S
+
+// utils
+@import 'utils/utils';
+@import 'utils/common';
+// @import "utils/animations";
+
+body {
+	font-family: $fontFamily;
+	font-weight: 500;
+	overflow: auto;
+
+	// Скролл заблокирован
+	.lock {
+		overflow: hidden;
+		touch-action: none;
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+.wrapper {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+
+	> main {
+		flex: 1 1 auto;
+	}
+
+	// Фикс для слайдеров
+	> * {
+		min-width: 0;
+	}
+}
+
+main {
+	margin-top: 80px;
+}
+
+[class*='__container'],
+.container {
+	margin: 0 auto;
+
+	@if ($maxWidthContainer>0) {
+		max-width: rem($maxWidthContainer);
+		box-sizing: content-box;
+	} @else {
+		@if ($containerPadding>0) {
+			padding: 0 rem(math.div($containerPadding, 2));
+		}
+	}
+
+	@media (max-width: $pc) {
+		max-width: rem(970);
+	}
+
+	@media (max-width: $tablet) {
+		max-width: rem(750);
+	}
+
+	@media (max-width: $mobile) {
+		max-width: none;
+
+		@if ($containerPadding>0 and $maxWidthContainer>0) {
+			padding: 0 rem($containerPadding);
+		}
+	}
+}
+
+[class*='__container--small'] {
+	margin: 0 auto;
+	max-width: 736px;
+
+	@media (max-width: 767.98px) {
+		max-width: 696px;
+		padding: 0 rem($containerPadding);
+	}
+
+	@media (max-width: 716px) {
+		max-width: 100%;
+	}
+}
+
+[class*='__container--x-small'] {
+	margin: 0 auto;
+	max-width: 544px;
+
+	@media (max-width: 767.98px) {
+		max-width: 696px;
+		padding: 0 rem($containerPadding);
+	}
+
+	@media (max-width: 716px) {
+		max-width: 100%;
+	}
+}
+
+// vendors
+@import 'vendors/swiper';
+@import 'vendors/select';
+// @import 'vendors/simplebar';
+@import 'vendors/cropper';
+
+// components
+@import 'components/breadcrumbs';
+@import 'components/page-nav';
+@import 'components/btns';
+@import 'components/modal';
+@import 'components/news-list';
+@import 'components/select';
+@import 'components/pagination';
+@import 'components/blocks';
+@import 'components/input';
+@import 'components/photo-input';
+@import 'components/file';
+@import 'components/steps/case-progress';
+@import 'components/steps/case-steps';
+@import 'components/notification';
+@import 'components/loading';
+@import 'components/title';
+@import 'components/empty';
+@import 'components/card';
+@import 'components/panel';
+@import 'components/tickets';
+@import 'components/checkbox';
+@import 'components/mentor-card';
+@import 'components/person-card';
+@import 'components/review';
+@import 'components/charts';
+@import 'components/graphics';
+@import 'components/welcome-videos';
+@import 'components/case-file';
+@import 'components/carousel';
+@import 'components/tabs';
+@import 'components/datepicker/datepicker';
+@import 'components/datepicker/select';
+
+// layout
+@import 'layout/header';
+@import 'layout/footer';
+
+// pages
+@import 'pages/404';
+@import 'pages/home';
+@import 'pages/archive';
+@import 'pages/single-post';
+@import 'pages/login';
+@import 'pages/personal';
+@import 'pages/cabinet';
+@import 'pages/mentor';
+@import 'pages/case';
+@import 'pages/feedback';
+@import 'pages/instruction';
+@import 'pages/editor';
+
+@import 'pages/editor/communication.scss';
+@import 'pages/editor/users.scss';
+@import 'pages/editor/cases.scss';
+@import 'pages/editor/news.scss';

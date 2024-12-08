@@ -1,0 +1,156 @@
+.circular-chart {
+	display: block;
+	width: 128px;
+	height: 128px;
+
+	.circle-bg {
+		fill: none;
+		stroke: $white;
+		stroke-width: 1;
+	}
+
+	.circle {
+		fill: none;
+		stroke-width: 1.25;
+		stroke-linecap: round;
+		animation: progress 1s ease-out forwards;
+		stroke: $red800;
+	}
+
+	@keyframes progress {
+		0% {
+			stroke-dasharray: 0 100;
+		}
+	}
+
+	.percentage {
+		fill: $gray800;
+		font-size: 11px;
+		font-weight: 400;
+		text-anchor: middle;
+		transform: translateY(1px);
+	}
+}
+
+.round-charts {
+	width: 100%;
+
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 32px;
+	}
+
+	&__icon {
+		margin-right: 4px;
+	}
+
+	&__label {
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 22px;
+		letter-spacing: -0.016em;
+	}
+
+	&__wrapper {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 32px;
+	}
+
+	&__caption {
+		margin-top: 8px;
+		font-size: 19px;
+		font-weight: 300;
+		line-height: 20.9px;
+		letter-spacing: -0.003em;
+		text-align: center;
+	}
+}
+
+.doughnut-chart {
+	display: flex;
+	align-items: center;
+
+	@media (max-width: $tablet) {
+		flex-direction: column;
+	}
+
+	&__chart {
+		max-width: 327px;
+		margin-right: 64px;
+
+		@media (max-width: $tablet) {
+			margin-right: 0;
+		}
+	}
+
+	&__canvas {
+		max-width: 327px;
+		max-height: 327px;
+	}
+
+	&__caption {
+		margin-top: 16px;
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 22px;
+		letter-spacing: -0.016em;
+		text-align: center;
+	}
+
+	&__labels {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 32px;
+
+		.legend__item {
+			width: calc(50% - 16px);
+
+			@media (max-width: $tablet) {
+				width: calc(50% - 8px);
+			}
+
+			@media (max-width: $mobileMedium) {
+				width: 100%;
+			}
+		}
+
+		@media (max-width: $tablet) {
+			margin-top: 32px;
+			gap: 16px;
+		}
+
+		@media (max-width: $mobileMedium) {
+			margin-top: 64px;
+			gap: 32px;
+		}
+	}
+}
+
+// .line-chart {
+// 	&__chart {
+// 		padding: 16px 32px 0 16px;
+// 		border: 1px solid $gray400;
+// 		border-radius: 12px;
+// 	}
+
+// 	&__canvas {
+// 		width: 100%;
+// 		max-height: 258px;
+// 	}
+
+// 	&__labels {
+// 		display: flex;
+// 		flex-wrap: wrap;
+// 		gap: 32px;
+// 		padding: 32px 0;
+// 	}
+// }
+
+.single-chart {
+	display: flex;
+	justify-content: center;
+}

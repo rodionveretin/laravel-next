@@ -1,0 +1,62 @@
+.welcome-videos {
+	&__gallery {
+		display: flex;
+		justify-content: space-between;
+		gap: 32px;
+
+		@media (max-width: $tablet) {
+			gap: 16px;
+		}
+
+		@media (max-width: $mobile) {
+			gap: 8px;
+		}
+
+		@media (max-width: $mobileMedium) {
+			gap: 32px;
+			flex-wrap: wrap;
+		}
+	}
+
+	&__item {
+		width: calc(100% / 3 - 16px);
+		height: 224px;
+		border-radius: 12px;
+		overflow: hidden;
+		background-color: $gray800;
+
+
+		@media (max-width: $tablet) {
+			width: calc(100% / 3 - 8px);
+		}
+
+		@media (max-width: $mobile) {
+			width: calc(100% / 3 - 4px);
+			height: 188px;
+		}
+
+		@media (max-width: $mobileMedium) {
+			width: 100%;
+			height: 224px;
+		}
+
+		@media (max-width: $mobileSmall) {
+			width: 100%;
+			height: 188px;
+		}
+
+		video,
+		iframe {
+			width: 100%;
+			height: 100% !important;
+		}
+	}
+
+	&__control {
+		display: none;
+
+		@media (max-width: $tablet) {
+			display: flex;
+		}
+	}
+}

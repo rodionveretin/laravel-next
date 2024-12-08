@@ -1,0 +1,80 @@
+.carousel {
+	&__control {
+		margin-top: 32px;
+		display: none;
+
+		@media (max-width: $tablet) {
+			display: flex;
+		}
+
+		@media (max-width: 600px) {
+			display: none;
+		}
+	}
+
+	@media (max-width: 600px) {
+		&__slider > .swiper-wrapper {
+			flex-wrap: wrap;
+		}
+
+		.swiper-slide + .swiper-slide {
+			margin-top: 64px;
+		}
+	}
+
+	.swiper-slide {
+		height: auto;
+	}
+}
+
+.carousel-item {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 16px;
+	}
+
+	&__title {
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 26.4px;
+		letter-spacing: -0.016em;
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 17.6px;
+		letter-spacing: -0.002em;
+		color: $gray600;
+		text-decoration: underline !important;
+	}
+
+	&__body {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+
+		.swiper {
+			width: 100%;
+			flex-grow: 1;
+			.swiper-wrapper {
+				height: 100%;
+			}
+		}
+		.card {
+			height: 100%;
+		}
+	}
+
+	&__control {
+		margin-top: 16px;
+	}
+}

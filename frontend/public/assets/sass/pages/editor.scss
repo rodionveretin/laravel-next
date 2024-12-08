@@ -1,0 +1,18 @@
+.editor {
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 48px 0;
+	}
+
+	&__tabs {
+		margin-bottom: 48px;
+	}
+
+	&__pagination {
+		display: flex;
+		justify-content: center;
+		margin: 32px 0 48px;
+	}
+}

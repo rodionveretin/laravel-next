@@ -1,0 +1,58 @@
+.editor-tickets {
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		padding: 16px 32px;
+		box-shadow:
+			0 4px 8px -4px rgba(0, 0, 0, 0.08),
+			0 16px 32px -16px rgba(0, 0, 0, 0.24);
+		border-radius: 12px;
+	}
+
+	&__item + &__item {
+		margin-top: 16px;
+	}
+
+	&__author {
+		display: flex;
+		align-items: center;
+		margin-bottom: 8px;
+		font-size: 12px;
+		font-weight: 300;
+		line-height: 18px;
+		color: $gray400;
+		svg {
+			margin-right: 4px;
+		}
+	}
+
+	&__name {
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 22px;
+		letter-spacing: -0.016em;
+		text-align: left;
+	}
+
+	&__alert {
+		padding: 4px 6px;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 16px;
+		letter-spacing: -0.016em;
+		border-radius: 48px;
+		&--red {
+			background-color: $red400;
+		}
+
+		&--green {
+			background-color: $green400;
+		}
+	}
+
+	&__filter {
+		margin-bottom: 48px;
+	}
+}

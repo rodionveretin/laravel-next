@@ -1,0 +1,55 @@
+.graphics {
+	margin-bottom: 123px;
+
+	@media (max-width: $mobile) {
+		margin-bottom: 48px;
+	}
+
+	&__title {
+		margin-bottom: 48px;
+	}
+
+	&__content {
+		padding: 32px;
+		box-shadow: 0px 1px 10px -1px #00000014, 0px 4px 8px -4px #00000029;
+		border-radius: 12px;
+	}
+
+	&__slider {
+		margin: -10px;
+	}
+
+	&__slide {
+		margin: 10px;
+	}
+
+	&__control {
+		margin-top: 48px;
+		.swiper-pagination {
+			margin: 0 32px;
+		}
+	}
+}
+
+.legend {
+	&__item {
+		display: flex;
+		align-items: center;
+	}
+
+	&__color {
+		flex-shrink: 0;
+		width: 25px;
+		height: 25px;
+		margin-right: 4px;
+		border-radius: 50%;
+		background-color: var(--bg);
+	}
+
+	&__label {
+		font-size: 19px;
+		font-weight: 300;
+		line-height: 20.9px;
+		letter-spacing: -0.003em;
+	}
+}

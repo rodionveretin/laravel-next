@@ -1,0 +1,96 @@
+.person-card {
+	display: block;
+	cursor: pointer;
+
+	input {
+		position: absolute;
+		opacity: 0;
+
+		&:checked+.person-card__content {
+			border: 2px solid $red400;
+
+			.person-card__name {
+				color: $red800;
+			}
+		}
+	}
+
+	&__content {
+		display: flex;
+		align-items: flex-start;
+		// flex-wrap: wrap;
+		padding: 32px;
+		background: $gray100;
+		border-radius: 12px;
+		border: 2px solid $gray100;
+	}
+
+	&__img {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: $purple100;
+		border-radius: 50%;
+		width: 96px;
+		height: 96px;
+		margin-right: 16px;
+		flex-shrink: 0;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 50%;
+		}
+
+		@media (max-width: $mobile) {
+			width: 40px;
+			height: 40px;
+		}
+	}
+
+	&__info {
+		width: calc(100% - 112px);
+
+		@media (max-width: $mobile) {
+			width: calc(100% - 56px);
+		}
+	}
+
+	&__name {
+		margin-bottom: 2px;
+		font-weight: 600;
+		font-size: 20px;
+		line-height: 110%;
+		letter-spacing: -0.016em;
+		color: $gray800;
+	}
+
+	&__post {
+		font-weight: 300;
+		font-size: 12px;
+		line-height: 150%;
+		color: $gray500;
+	}
+
+	&__status {
+		display: flex;
+		align-items: center;
+		margin-top: 16px;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 16px;
+		letter-spacing: -0.016em;
+		color: $gray400;
+		font-weight: 600;
+		white-space: break-spaces;
+
+		span {
+			font-weight: 600;
+			font-size: 14px;
+			line-height: 110%;
+			letter-spacing: -0.016em;
+			color: $gray800;
+		}
+	}
+}

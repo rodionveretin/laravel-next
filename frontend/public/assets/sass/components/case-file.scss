@@ -1,0 +1,30 @@
+.case-file {
+
+	&__icon {
+		height: 24px;
+		margin-right: 24px;
+
+		img {
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+
+		&:hover>* {
+			color: $red800;
+			transition: color 0.25s;
+		}
+	}
+
+	&__name {
+		font-size: 14px;
+		font-weight: 300;
+		line-height: 21px;
+		color: $blue800;
+		transition: color 0.25s;
+	}
+}
